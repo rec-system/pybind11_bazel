@@ -1,9 +1,12 @@
-local_repository(
-    name = "pybind11_bazel",
-    path = "..",
-)
+
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+  name = "pybind11_bazel",
+  strip_prefix = "pybind11_bazel-1943500d97ef8bca7bd4484418602ede67e4a830",
+  urls = ["https://github.com/rec-system/pybind11_bazel/archive/1943500d97ef8bca7bd4484418602ede67e4a830.zip"],
+)
 
 http_archive(
     name = "rules_python",
@@ -18,8 +21,8 @@ py_repositories()
 http_archive(
   name = "pybind11",
   build_file = "@pybind11_bazel//:pybind11.BUILD",
-  strip_prefix = "pybind11-2.6.0b1",
-  urls = ["https://github.com/pybind/pybind11/archive/v2.6.0b1.tar.gz"],
+  strip_prefix = "pybind11-2.7.1",
+  urls = ["https://github.com/pybind/pybind11/archive/v2.7.1.tar.gz"],
 )
 
 load("@pybind11_bazel//:python_configure.bzl", "python_configure")
