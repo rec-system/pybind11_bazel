@@ -4,6 +4,8 @@ import extension.adder_extension as extension
 
 import unittest
 
+class TestData(Object):
+    pass
 
 class TestAnswer(unittest.TestCase):
     def test_basic_case(self):

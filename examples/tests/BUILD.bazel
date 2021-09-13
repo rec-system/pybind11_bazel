@@ -1,6 +1,15 @@
 load("@rules_python//python:defs.bzl", "py_test")
+load("@rules_python//python:defs.bzl", "py_binary")
 
 package(default_visibility = ["//visibility:public"])
+
+py_library(
+  name = "lib_test",
+  srcs = ["extension_test.py"],
+  data = [
+    "//extension:adder_extension",
+  ],
+)
 
 py_test(
     name = "extension_test",
