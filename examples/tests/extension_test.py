@@ -4,12 +4,12 @@ import extension.adder_extension as extension
 
 import unittest
 
-class TestData(Object):
-    pass
 
 class TestAnswer(unittest.TestCase):
     def test_basic_case(self):
         adder = extension.Adder(40, 2)
+        data = adder.get()
+        print(data.dense_vec)
         self.assertEqual(adder.sum(), 42)
 
 
